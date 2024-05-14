@@ -26,6 +26,7 @@ struct SelectionString: View {
         VStack(alignment: .leading,spacing: 24){
             
             Text(title).bold()
+                .foregroundStyle(.white)
                 .padding(.horizontal, 20)
             
             ScrollView(.horizontal){
@@ -34,6 +35,7 @@ struct SelectionString: View {
                         Text(item.item)
                             .frame(width: 40, height: 40)
                             .font(.custom(item.font, size: 18))
+                            .foregroundStyle(.white)
                             .background(Color(item.color), in: Circle())
                             .scaleEffect(selected == item[keyPath: keyPathToProperty] ? 0.7 : 1)
                             .overlay {

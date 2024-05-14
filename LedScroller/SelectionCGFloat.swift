@@ -17,6 +17,7 @@ struct SelectionCGFloat: View {
         VStack(alignment: .leading,spacing: 24){
             
             Text(title).bold()
+                .foregroundStyle(.white)
                 .padding(.horizontal, 20)
             
             ScrollView(.horizontal){
@@ -24,6 +25,7 @@ struct SelectionCGFloat: View {
                     ForEach(item){ item in
                         Text(item.item)
                             .frame(width: 40, height: 40)
+                            .foregroundStyle(.white)
                             .font(.custom(item.font, size: 18))
                             .background(Color(item.color), in: Circle())
                             .scaleEffect(selected == item[keyPath: keyPathToProperty] ? 0.7 : 1)

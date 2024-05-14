@@ -91,6 +91,7 @@ struct SettingView: View {
     var sliderSpeed: some View{
         VStack(alignment: .leading){
             Text("Speed \(String(format: "%.2f", speed))").bold()
+                .foregroundStyle(.white)
             
             Slider(value: $speed, in: 0...10)
         }
