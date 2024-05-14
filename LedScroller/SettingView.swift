@@ -14,6 +14,7 @@ struct SettingView: View {
     @Binding var tColorSelected: String
     @Binding var bColorSelected: String
     @Binding var tsizesSelected: CGFloat
+    @Binding var speed: Double
     
     var fonts: [DataModel] = [
         DataModel(item: "Aa", font: "ChalkboardSE-Regular"),
@@ -57,6 +58,8 @@ struct SettingView: View {
                 SelectionString(title: "Text color", item: Tcolor, keyPathToProperty: \.color, selected: $tColorSelected)
                 SelectionString(title: "Backgound color", item: Bcolor, keyPathToProperty: \.color, selected: $bColorSelected)
                 SelectionCGFloat(title: "Text size", item: Tsize, keyPathToProperty: \.sizs, selected: $tsizesSelected)
+                
+                sliderSpeed
             }
             .scrollIndicators(.hidden)
             .ignoresSafeArea()
@@ -83,6 +86,16 @@ struct SettingView: View {
                         .padding(.trailing, 20)
                 })
             }
+    }
+    
+    var sliderSpeed: some View{
+        VStack(alignment: .leading){
+            Text("Speed \(String(format: "%.2f", speed))").bold()
+            
+            Slider(value: $speed, in: 0...10)
+        }
+        .padding(.bottom)
+        .padding(.horizontal)
     }
 }
 

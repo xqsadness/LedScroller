@@ -9,11 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     @State var show = false
-    @State var text = "test"
+    @State var text = "Hello world"
     @State var FontSelected = "ChalkboardSE-Regular"
     @State var TcolorSelected = "tc1"
     @State var BcolorSelected = "bc1"
     @State var TsizsSelected: CGFloat = 100
+    @State var speed: Double = 10
     
     var body: some View {
         ZStack{
@@ -25,25 +26,33 @@ struct HomeView: View {
                     fontselected: $FontSelected,
                     tColorSelected: $TcolorSelected,
                     bColorSelected: $BcolorSelected,
-                    tsizesSelected: $TsizsSelected
+                    tsizesSelected: $TsizsSelected,
+                    speed: $speed
                 )
             }else{
-                ContentView(text: $text, textSize: $TsizsSelected, Tcolor: $TcolorSelected, Bcolor: $BcolorSelected, font: $FontSelected)
-                    .overlay (alignment: .topTrailing) {
-                        Button(action: {
-                            withAnimation {
-                                show.toggle()
-                            }
-                        }, label: {
-                            Image (systemName: "chevron.backward").bold()
-                                .frame(width: 50, height: 50)
-                                .background(
-                                    .white, in: RoundedRectangle(cornerRadius: 10).stroke (lineWidth: 2))
-                                .foregroundStyle (.white)
-                        })
-                        .rotationEffect (.degrees (90))
-                        .padding()
-                    }
+                ContentView(
+                    text: $text,
+                    textSize: $TsizsSelected,
+                    Tcolor: $TcolorSelected,
+                    Bcolor: $BcolorSelected,
+                    font: $FontSelected,
+                    speed: $speed
+                )
+                .overlay (alignment: .topTrailing) {
+                    Button(action: {
+                        withAnimation {
+                            show.toggle()
+                        }
+                    }, label: {
+                        Image (systemName: "chevron.backward").bold()
+                            .frame(width: 50, height: 50)
+                            .background(
+                                .white, in: RoundedRectangle(cornerRadius: 10).stroke (lineWidth: 2))
+                            .foregroundStyle (.white)
+                    })
+                    .rotationEffect (.degrees (90))
+                    .padding()
+                }
             }
         }
     }

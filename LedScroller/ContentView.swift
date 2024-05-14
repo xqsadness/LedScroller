@@ -15,6 +15,7 @@ struct ContentView: View {
     @Binding var Tcolor: String
     @Binding var Bcolor: String
     @Binding var font: String
+    @Binding var speed: Double
     
     @State var textWidth: CGFloat = 0
     @State var offset: CGFloat = 0
@@ -41,7 +42,7 @@ struct ContentView: View {
                         }
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                            withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+                            withAnimation(.linear(duration: speed).repeatForever(autoreverses: false)) {
                                 offset = -textWidth / 2
                             }
                         }
