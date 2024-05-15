@@ -12,8 +12,8 @@ struct ContentView: View {
     
     @Binding var text: String
     @Binding var textSize: CGFloat
-    @Binding var Tcolor: String
-    @Binding var Bcolor: String
+    @Binding var Tcolor: Color
+    @Binding var Bcolor: Color
     @Binding var font: String
     @Binding var speed: Double
     
@@ -21,11 +21,11 @@ struct ContentView: View {
     @State var offset: CGFloat = 0
     var body: some View {
         ZStack{
-            Color(Bcolor).ignoresSafeArea()
+            Bcolor.ignoresSafeArea()
             GeometryReader { geo in
                 Text(text)
                     .font(.custom(font, size: textSize))
-                    .foregroundStyle(Color(Tcolor))
+                    .foregroundStyle(Tcolor)
                     .fixedSize()
                     .background(GeometryReader{ textGeo -> Color in
                         DispatchQueue.main.async{

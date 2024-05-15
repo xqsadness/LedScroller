@@ -11,8 +11,8 @@ struct SmallLED: View {
     
     @Binding var text: String
     @Binding var textSize: CGFloat
-    @Binding var Tcolor: String
-    @Binding var Bcolor: String
+    @Binding var Tcolor: Color
+    @Binding var Bcolor: Color
     @Binding var font: String
 
     var body: some View {
@@ -21,13 +21,13 @@ struct SmallLED: View {
                 Text(text).bold()
                     .font(.custom(font, size: textSize / 2))
                     .fixedSize(horizontal: true, vertical: false)
-                    .foregroundStyle(Color(Tcolor))
+                    .foregroundStyle(Tcolor)
                     .position(x: geo.size.width / 2 ,y: geo.size.height / 2 + 40)
             }
             .frame(height: 300)
         }
         .ignoresSafeArea()
-        .background(Color(Bcolor))
+        .background(Bcolor)
     }
 }
 

@@ -16,6 +16,8 @@
 		DD9B1AF62BF34E6F002F38DE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9B1AF52BF34E6F002F38DE /* SettingView.swift */; };
 		DD9B1AF82BF351D7002F38DE /* SelectionCGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9B1AF72BF351D7002F38DE /* SelectionCGFloat.swift */; };
 		DD9B1AFA2BF35285002F38DE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9B1AF92BF35285002F38DE /* HomeView.swift */; };
+		DDBACBBF2BF459BC007D0606 /* SelectionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBACBBE2BF459BC007D0606 /* SelectionColor.swift */; };
+		DDBACBC32BF459DC007D0606 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBACBC22BF459DC007D0606 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		DD9B1AF52BF34E6F002F38DE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DD9B1AF72BF351D7002F38DE /* SelectionCGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCGFloat.swift; sourceTree = "<group>"; };
 		DD9B1AF92BF35285002F38DE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DDBACBBE2BF459BC007D0606 /* SelectionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionColor.swift; sourceTree = "<group>"; };
+		DDBACBC22BF459DC007D0606 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +65,11 @@
 		DD9B1AE02BF342C1002F38DE /* LedScroller */ = {
 			isa = PBXGroup;
 			children = (
+				DDBACBC12BF459C8007D0606 /* Models */,
+				DDBACBC02BF459C4007D0606 /* Views */,
 				DD9B1AE12BF342C1002F38DE /* LedScrollerApp.swift */,
 				DD9B1AE32BF342C1002F38DE /* ContentView.swift */,
-				DD9B1AF72BF351D7002F38DE /* SelectionCGFloat.swift */,
 				DD9B1AF92BF35285002F38DE /* HomeView.swift */,
-				DD9B1AF12BF349C4002F38DE /* SmallLED.swift */,
-				DD9B1AF52BF34E6F002F38DE /* SettingView.swift */,
-				DD9B1AF32BF34B14002F38DE /* SelectionString.swift */,
 				DD9B1AE72BF342C2002F38DE /* Assets.xcassets */,
 				DD9B1AE92BF342C2002F38DE /* Preview Content */,
 			);
@@ -80,6 +82,26 @@
 				DD9B1AEA2BF342C2002F38DE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DDBACBC02BF459C4007D0606 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD9B1AF52BF34E6F002F38DE /* SettingView.swift */,
+				DD9B1AF12BF349C4002F38DE /* SmallLED.swift */,
+				DDBACBBE2BF459BC007D0606 /* SelectionColor.swift */,
+				DD9B1AF72BF351D7002F38DE /* SelectionCGFloat.swift */,
+				DD9B1AF32BF34B14002F38DE /* SelectionString.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDBACBC12BF459C8007D0606 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDBACBC22BF459DC007D0606 /* DataModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +178,11 @@
 				DD9B1AFA2BF35285002F38DE /* HomeView.swift in Sources */,
 				DD9B1AF62BF34E6F002F38DE /* SettingView.swift in Sources */,
 				DD9B1AF42BF34B14002F38DE /* SelectionString.swift in Sources */,
+				DDBACBBF2BF459BC007D0606 /* SelectionColor.swift in Sources */,
 				DD9B1AF82BF351D7002F38DE /* SelectionCGFloat.swift in Sources */,
 				DD9B1AF22BF349C4002F38DE /* SmallLED.swift in Sources */,
 				DD9B1AE22BF342C1002F38DE /* LedScrollerApp.swift in Sources */,
+				DDBACBC32BF459DC007D0606 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LedScroller/Preview Content\"";
+				DEVELOPMENT_TEAM = 4BB9BFSL47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -319,6 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LedScroller/Preview Content\"";
+				DEVELOPMENT_TEAM = 4BB9BFSL47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

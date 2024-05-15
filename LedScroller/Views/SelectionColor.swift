@@ -1,26 +1,17 @@
 //
-//  SelectionString.swift
+//  SelectionColor.swift
 //  LedScroller
 //
-//  Created by darktech4 on 14/05/2024.
+//  Created by darktech4 on 15/05/2024.
 //
 
 import SwiftUI
 
-struct DataModel:Identifiable{
-    var id = UUID()
-    var item: String = ""
-    var font: String = "ChalkboardSE-Regular"
-    var sizs: CGFloat = 100
-    var color: String = "bc"
-}
-
-
-struct SelectionString: View {
+struct SelectionColor: View {
     var title: String
     var item:[DataModel]
-    var keyPathToProperty: KeyPath<DataModel, String>
-    @Binding var selected: String
+    var keyPathToProperty: KeyPath<DataModel, Color>
+    @Binding var selected: Color
     
     var body: some View {
         VStack(alignment: .leading,spacing: 24){
@@ -31,12 +22,14 @@ struct SelectionString: View {
             
             ScrollView(.horizontal){
                 HStack(spacing: 20){
+                    ColorPicker("", selection: $selected)
+                    
                     ForEach(item){ item in
                         Text(item.item)
                             .frame(width: 40, height: 40)
                             .font(.custom(item.font, size: 18))
                             .foregroundStyle(.white)
-                            .background(Color(item.color), in: Circle())
+                            .background(item.color, in: Circle())
                             .scaleEffect(selected == item[keyPath: keyPathToProperty] ? 0.7 : 1)
                             .overlay {
                                 Circle()
@@ -57,7 +50,3 @@ struct SelectionString: View {
         }
     }
 }
-
-//#Preview {
-//    SelectionString()
-//}

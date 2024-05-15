@@ -11,8 +11,8 @@ struct HomeView: View {
     @State var show = false
     @State var text = "Hello world"
     @State var FontSelected = "ChalkboardSE-Regular"
-    @State var TcolorSelected = "tc1"
-    @State var BcolorSelected = "bc1"
+    @State var TcolorSelected: Color = .tc1
+    @State var BcolorSelected: Color = .bc1
     @State var TsizsSelected: CGFloat = 100
     @State var speed: Double = 10
     

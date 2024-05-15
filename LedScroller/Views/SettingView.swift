@@ -11,8 +11,8 @@ struct SettingView: View {
     @Binding var show: Bool
     @Binding var text: String
     @Binding var fontselected: String
-    @Binding var tColorSelected: String
-    @Binding var bColorSelected: String
+    @Binding var tColorSelected: Color
+    @Binding var bColorSelected: Color
     @Binding var tsizesSelected: CGFloat
     @Binding var speed: Double
     
@@ -25,20 +25,20 @@ struct SettingView: View {
         DataModel(item: "Ae", font: "Papyrus")
     ]
     var Tcolor: [DataModel] = [
-        DataModel(color: "tc1"),
-        DataModel(color: "tc2"),
-        DataModel(color: "tc3"),
-        DataModel(color: "tc4"),
-        DataModel(color: "tc5"),
-        DataModel(color: "tc6")
+        DataModel(color: .tc1),
+        DataModel(color: .tc2),
+        DataModel(color: .tc3),
+        DataModel(color: .tc4),
+        DataModel(color: .tc5),
+        DataModel(color: .tc6)
     ]
     var Bcolor: [DataModel] = [
-        DataModel(color: "bc1"),
-        DataModel(color: "bc2"),
-        DataModel(color: "bc3"),
-        DataModel(color: "bc4"),
-        DataModel(color: "bc5"),
-        DataModel(color: "bc6")
+        DataModel(color: .bc1),
+        DataModel(color: .bc2),
+        DataModel(color: .bc3),
+        DataModel(color: .bc4),
+        DataModel(color: .bc5),
+        DataModel(color: .bc6)
     ]
     var Tsize: [DataModel] = [
         DataModel(item: "100", sizs: 100),
@@ -55,8 +55,8 @@ struct SettingView: View {
                 textfView
                 
                 SelectionString(title: "Font", item: fonts, keyPathToProperty: \.font, selected: $fontselected)
-                SelectionString(title: "Text color", item: Tcolor, keyPathToProperty: \.color, selected: $tColorSelected)
-                SelectionString(title: "Backgound color", item: Bcolor, keyPathToProperty: \.color, selected: $bColorSelected)
+                SelectionColor(title: "Text color", item: Tcolor, keyPathToProperty: \.color, selected: $tColorSelected)
+                SelectionColor(title: "Backgound color", item: Bcolor, keyPathToProperty: \.color, selected: $bColorSelected)
                 SelectionCGFloat(title: "Text size", item: Tsize, keyPathToProperty: \.sizs, selected: $tsizesSelected)
                 
                 sliderSpeed
